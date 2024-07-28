@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Minecraft";
+  src: url("assets/font/Minecraft.otf");
+}
+
+.mc-font {
+  font-family: Minecraft, serif;
+}
