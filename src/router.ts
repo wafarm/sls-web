@@ -5,6 +5,7 @@ import AdminHome from "@/views/admin/AdminHome.vue";
 import LoginView from "@/views/auth/LoginView.vue";
 import RegisterView from "@/views/auth/RegisterView.vue";
 import DashContainer from "@/views/dash/DashContainer.vue";
+import DashEditProfile from "@/views/dash/DashEditProfile.vue";
 import DashHome from "@/views/dash/DashHome.vue";
 import DashProfiles from "@/views/dash/DashProfiles.vue";
 import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
@@ -30,6 +31,7 @@ const routes: RouteRecordRaw[] = [
     children: [
       { path: "", component: DashHome },
       { path: "profiles", component: DashProfiles },
+      { path: "profile/edit/:id", component: DashEditProfile },
     ],
   },
   {

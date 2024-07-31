@@ -4,8 +4,10 @@ import TextInput from "@/components/TextInput.vue";
 import type { Profile, User } from "@/models";
 import axios from "axios";
 import { computed, onMounted, ref } from "vue";
+import { useRouter } from "vue-router";
 import { useToast } from "vue-toast-notification";
 
+const router = useRouter();
 const toast = useToast();
 const user = ref(null as null | User);
 const profiles = ref<Profile[]>([]);
@@ -95,7 +97,13 @@ onMounted(async () => {
     </div>
     <div class="flex flex-wrap gap-5 py-5">
       <span v-if="profiles.length == 0">空</span>
-      <ProfileCard v-else v-for="profile in profiles" :key="profile.slot" :name="profile.name" />
+      <ProfileCard
+        v-else
+        v-for="profile in profiles"
+        :key="profile.slot"
+        :name="profile.name"
+        @click="router.push('/dash/profile/edit/' + profile.slot)"
+      />
     </div>
   </div>
   <div
