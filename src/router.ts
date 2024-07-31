@@ -51,7 +51,6 @@ export const router = createRouter({
 
 router.beforeEach((to) => {
   const store = useAuthStore();
-  console.log(store.authenticated);
   if (store.authenticated) {
     if (to.name === "Login" || to.name === "Register") {
       return "/dash";

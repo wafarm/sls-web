@@ -7,7 +7,8 @@ const authStore = useAuthStore();
 
 function logout(event: Event) {
   event.preventDefault();
-  authStore.$reset();
+  authStore.authenticated = false;
+  authStore.token = null;
   router.push("/auth/login");
 }
 </script>
